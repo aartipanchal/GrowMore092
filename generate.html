@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distributor Contract · Form to PDF</title>
+    <link rel="stylesheet" href="./generate.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div>
+          <div class="topbar__title">Distributor Contract</div>
+          <div class="topbar__sub">Fill the form → Generate a PDF</div>
+        </div>
+        <div class="topbar__actions">
+          <button class="btn btn--solid" id="btn-download" type="button">Download PDF</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2 class="panel__title">Form</h2>
+        <form id="contract-form" class="form" novalidate>
+          <div class="grid">
+            <div class="field">
+              <label for="contractDate">Contract date</label>
+              <input id="contractDate" name="contractDate" type="text" placeholder="DD/MM/YYYY" required />
+              <small class="hint">Example: 01/05/2026</small>
+            </div>
+
+            <div class="field">
+              <label for="firmName">Firm name (M/s)</label>
+              <input id="firmName" name="firmName" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="gstState">GST state</label>
+              <input id="gstState" name="gstState" type="text" placeholder="Gujarat" required />
+            </div>
+
+            <div class="field">
+              <label for="gstNumber">GST number</label>
+              <input id="gstNumber" name="gstNumber" type="text" minlength="8" required />
+            </div>
+
+            <div class="field">
+              <label for="panNumber">PAN number (Firm)</label>
+              <input id="panNumber" name="panNumber" type="text" minlength="8" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+          </div>
+
+          <h3 class="form__section">Firm address</h3>
+          <div class="grid">
+            <div class="field">
+              <label for="addressVillage">Village</label>
+              <input id="addressVillage" name="addressVillage" type="text" required />
+            </div>
+            <div class="field">
+              <label for="addressTaluka">Taluka</label>
+              <input id="addressTaluka" name="addressTaluka" type="text" required />
+            </div>
+            <div class="field">
+              <label for="addressDistrict">District</label>
+              <input id="addressDistrict" name="addressDistrict" type="text" required />
+            </div>
+            <div class="field">
+              <label for="addressState">State</label>
+              <input id="addressState" name="addressState" type="text" required />
+            </div>
+            <div class="field">
+              <label for="addressPincode">Pin code</label>
+              <input id="addressPincode" name="addressPincode" type="text" inputmode="numeric"  required />
+            </div>
+          </div>
+
+          <h3 class="form__section">Type of firm</h3>
+          <div class="choices" role="group" aria-label="Type of firm">
+            <label class="choice"><input type="radio" name="firmType" value="Proprietors" required /> Proprietors</label>
+            <label class="choice"><input type="radio" name="firmType" value="Partnership" /> Partnership</label>
+            <label class="choice"><input type="radio" name="firmType" value="Pvt Ltd Co." /> Pvt Ltd Co.</label>
+            <label class="choice"><input type="radio" name="firmType" value="Ltd Company" /> Ltd Company</label>
+            <label class="choice"><input type="radio" name="firmType" value="HUF" /> HUF</label>
+            <label class="choice"><input type="radio" name="firmType" value="Other" /> Other</label>
+          </div>
+
+          <h3 class="form__section">Owner A</h3>
+          <div class="grid">
+            <div class="field"><label for="ownerAName">Name</label><input id="ownerAName" name="ownerAName" type="text" required /></div>
+            <div class="field"><label for="ownerAMobile">Mobile</label><input id="ownerAMobile" name="ownerAMobile" type="text" inputmode="numeric" required /></div>
+            <div class="field"><label for="ownerAAddress">Address</label><input id="ownerAAddress" name="ownerAAddress" type="text" required /></div>
+            <div class="field"><label for="ownerAAtPost">At &amp; Post</label><input id="ownerAAtPost" name="ownerAAtPost" type="text" required /></div>
+            <div class="field"><label for="ownerATaluka">Taluka</label><input id="ownerATaluka" name="ownerATaluka" type="text" required /></div>
+            <div class="field"><label for="ownerADistrict">District</label><input id="ownerADistrict" name="ownerADistrict" type="text" required /></div>
+            <div class="field"><label for="ownerAPincode">Pin code</label><input id="ownerAPincode" name="ownerAPincode" type="text" inputmode="numeric"  required /></div>
+            <div class="field"><label for="ownerAPan">PAN</label><input id="ownerAPan" name="ownerAPan" type="text" /></div>
+            <div class="field field--full"><label for="ownerAAddressBox">Address (box)</label><input id="ownerAAddressBox" name="ownerAAddressBox" type="text" /></div>
+          </div>
+
+          <h3 class="form__section">Owner B</h3>
+          <div class="grid">
+            <div class="field"><label for="ownerBName">Name</label><input id="ownerBName" name="ownerBName" type="text" /></div>
+            <div class="field"><label for="ownerBMobile">Mobile</label><input id="ownerBMobile" name="ownerBMobile" type="text" inputmode="numeric"  /></div>
+            <div class="field"><label for="ownerBAddress">Address</label><input id="ownerBAddress" name="ownerBAddress" type="text" /></div>
+            <div class="field"><label for="ownerBAtPost">At &amp; Post</label><input id="ownerBAtPost" name="ownerBAtPost" type="text" /></div>
+            <div class="field"><label for="ownerBTaluka">Taluka</label><input id="ownerBTaluka" name="ownerBTaluka" type="text" /></div>
+            <div class="field"><label for="ownerBDistrict">District</label><input id="ownerBDistrict" name="ownerBDistrict" type="text" /></div>
+            <div class="field"><label for="ownerBPincode">Pin code</label><input id="ownerBPincode" name="ownerBPincode" type="text" inputmode="numeric"  /></div>
+            <div class="field"><label for="ownerBPan">PAN</label><input id="ownerBPan" name="ownerBPan" type="text" /></div>
+            <div class="field field--full"><label for="ownerBAddressBox">Address (box)</label><input id="ownerBAddressBox" name="ownerBAddressBox" type="text" /></div>
+          </div>
+
+          <h3 class="form__section">Bank details</h3>
+          <div class="grid">
+            <div class="field"><label for="bankName">Bank name</label><input id="bankName" name="bankName" type="text" /></div>
+            <div class="field"><label for="bankBranchIfsc">Branch &amp; IFSC</label><input id="bankBranchIfsc" name="bankBranchIfsc" type="text" /></div>
+            <div class="field"><label for="bankAccountNumber">Account number</label><input id="bankAccountNumber" name="bankAccountNumber" type="text" inputmode="numeric\" /></div>
+          </div>
+
+          <h3 class="form__section">Signatures</h3>
+          <div class="grid">
+            <div class="field"><label for="distributorSignName">Distributor name</label><input id="distributorSignName" name="distributorSignName" type="text" /></div>
+            <div class="field"><label for="distributorSignDate">Distributor date</label><input id="distributorSignDate" name="distributorSignDate" type="text" placeholder="DD/MM/YYYY" /></div>
+            <div class="field"><label for="gmcsEmployeeName">GMCS employee name</label><input id="gmcsEmployeeName" name="gmcsEmployeeName" type="text" /></div>
+            <div class="field"><label for="gmcsEmployeeDate">GMCS employee date</label><input id="gmcsEmployeeDate" name="gmcsEmployeeDate" type="text" placeholder="DD/MM/YYYY" /></div>
+            <div class="field"><label for="witnessName">Witness name</label><input id="witnessName" name="witnessName" type="text" /></div>
+          </div>
+
+          <p class="form__note" id="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Hidden live template (used for PDF generation) -->
+    <div class="template-holder" aria-hidden="true">
+      <div id="template-root"></div>
+    </div>
+
+    <script src="./generate.js"></script>
+  </body>
+</html>
