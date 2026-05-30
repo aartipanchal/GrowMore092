@@ -26,12 +26,13 @@
             </div>
             <div class="gmcs-header__right">
               <div class="gmcs-header__brand">
-                <img class="gmcs-header__logo" src="./image.png" alt="Company logo" />
+                 <img class="gmcs-header__logo" src="image.png" alt="Company logo" />
                 <div class="gmcs-header__brand-text">
                   <div class="gmcs-header__brand-name">Grow More</div>
                   <div class="gmcs-header__brand-sub">Crop Science</div>
                 </div>
               </div>
+            </br> </br>
               <div class="gmcs-header__date">
                 <span>Date :</span>
                 <span class="gmcs-blank gmcs-blank--sm" data-field="contractDate"></span>
@@ -116,16 +117,14 @@
               Any cheque without proper signature verification may be rejected or considered invalid by the bank.
             </p>
           </div>
-
-          <footer class="gmcs-footer" aria-label="GMCS footer">
-            <div class="gmcs-footer__left">Shop- FF-6, Shivaay, Bakrol–Dhamatvan Road, Bakrol Bujrang, Ta. Daskroi, Dist. Ahmedabad-382430</div>
-            <div class="gmcs-footer__right">growmorecropscience@gmail.com</div>
-          </footer>
+        </br> </br> </br> </br>
+          <div class="footer-container"></div>
+          <script src="footer.js"></script>
         </div>
 
-        <footer class="page__footer" aria-label="Page 1 footer">
+        <!-- <footer class="page__footer" aria-label="Page 1 footer">
           <span class="page__number">-- 1 of 3 --</span>
-        </footer>
+        </footer> -->
       </section>
 
       <!-- PAGE 2 -->
@@ -143,6 +142,7 @@
                   <div class="gmcs-header__brand-sub">Crop Science</div>
                 </div>
               </div>
+               </br> </br>
               <div class="gmcs-header__date">
                 <span>Date :</span>
                 <span class="gmcs-blank gmcs-blank--sm" data-field="contractDate"></span>
@@ -156,8 +156,8 @@
             <tbody>
               <tr>
                 <td class="c-no">1</td>
-                <td class="c-label">Name of the Fsirm</td>
-                <td class="c-value">M/S <span class="gmcs-blank gmcs-blank--xl" data-field="firmName"></span></td>
+                <td class="c-label">Name of the Firm</td>
+                <td class="c-value">M/S <span data-field="firmName"></span></td>
               </tr>
 
               <tr>
@@ -167,19 +167,19 @@
                   <table class="gmcs-sub" aria-label="Firm address">
                     <tr>
                       <td class="subcell">Village:</td>
-                      <td class="subcell subcell--fill"><span class="gmcs-blank gmcs-blank--md" data-field="addressVillage"></span></td>
+                      <td class="subcell subcell--fill"><span data-field="addressVillage"></span></td>
                       <td class="subcell">Taluka:</td>
-                      <td class="subcell subcell--fill"><span class="gmcs-blank gmcs-blank--md" data-field="addressTaluka"></span></td>
+                      <td class="subcell subcell--fill"><span  data-field="addressTaluka"></span></td>
                     </tr>
                     <tr>
                       <td class="subcell">Dist. :</td>
-                      <td class="subcell subcell--fill"><span class="gmcs-blank gmcs-blank--md" data-field="addressDistrict"></span></td>
+                      <td class="subcell subcell--fill"><span  data-field="addressDistrict"></span></td>
                       <td class="subcell">State:</td>
-                      <td class="subcell subcell--fill"><span class="gmcs-blank gmcs-blank--md" data-field="addressState"></span></td>
+                      <td class="subcell subcell--fill"><span data-field="addressState"></span></td>
                     </tr>
                     <tr>
                       <td class="subcell">Pin code :</td>
-                      <td class="subcell subcell--fill" colspan="3"><span class="gmcs-blank gmcs-blank--lg" data-field="addressPincode"></span></td>
+                      <td class="subcell subcell--fill" colspan="3"><span  data-field="addressPincode"></span></td>
                     </tr>
                   </table>
                 </td>
@@ -188,13 +188,13 @@
               <tr>
                 <td class="c-no">3</td>
                 <td class="c-label">GST Number</td>
-                <td class="c-value"><span class="gmcs-blank gmcs-blank--xxl" data-field="gstNumber"></span></td>
+                <td class="c-value"><span data-field="gstNumber"></span></td>
               </tr>
 
               <tr>
                 <td class="c-no">4</td>
                 <td class="c-label">Pan no. of the Firm</td>
-                <td class="c-value"><span class="gmcs-blank gmcs-blank--xl" data-field="panNumber"></span></td>
+                <td class="c-value"><span data-field="panNumber"></span></td>
               </tr>
 
               <tr>
@@ -213,13 +213,18 @@
               <tr>
                 <td class="c-no">6</td>
                 <td class="c-label">Email ID.</td>
-                <td class="c-value"><span class="gmcs-blank gmcs-blank--xxl" data-field="email"></span></td>
+                <td class="c-value"><span data-field="email"></span></td>
               </tr>
-
+               
               <tr>
                 <td class="c-no">7</td>
                 <td class="c-label">Owner Details</td>
                 <td class="c-value p0">
+              </tr>
+              <tr>
+                <!-- <td class="c-no">7</td>
+                <td class="c-label">Owner Details</td> -->
+                <!-- <td class="c-value p0"> -->
                   <table class="gmcs-owner" aria-label="Owner details">
                     <tr>
                       <td class="own-letter">A.</td>
@@ -260,33 +265,29 @@
                         <div class="own-right__bottom"><span class="r-label">Pan:</span> <span data-field="ownerBPan"></span></div>
                       </td>
                     </tr>
-                  </table>
-                </td>
-              </tr>
-
               <tr>
                 <td class="c-no">8</td>
-                <td class="c-label">Pesticide License No. &amp; Exp. date</td>
-                <td class="c-value"><span class="gmcs-blank gmcs-blank--xxl"></span></td>
+                <td class="c-label"> Pesticide License No. &amp; Exp. date</td>
+                <td class="c-value"><span data-field="pesticideLicense"></span></td>
               </tr>
 
               <tr>
                 <td class="c-no">9</td>
-                <td class="c-label">Fertilizer License No. &amp; Exp. date</td>
-                <td class="c-value"><span class="gmcs-blank gmcs-blank--xxl"></span></td>
+                <td class="c-label"> Fertilizer License No. &amp; Exp. date</td>
+                <td class="c-value"><span data-field="fertilizerLicense"></span></td>
+              </tr>
+                  </table>
+                </td>
               </tr>
             </tbody>
           </table>
-
-          <footer class="gmcs-footer" aria-label="GMCS footer">
-            <div class="gmcs-footer__left">Shop- FF-6, Shivaay, Bakrol–Dhamatvan Road, Bakrol Bujrang, Ta. Daskroi, Dist. Ahmedabad-382430</div>
-            <div class="gmcs-footer__right">growmorecropscience@gmail.com</div>
-          </footer>
+            </br> </br> </br> </br>
+          <div class="footer-container"></div>
+          <script src="footer.js"></script>
         </div>
-
-        <footer class="page__footer" aria-label="Page 2 footer">
+        <!-- <footer class="page__footer" aria-label="Page 2 footer">
           <span class="page__number">-- 2 of 3 --</span>
-        </footer>
+        </footer> -->
       </section>
 
       <!-- PAGE 3 -->
@@ -304,6 +305,7 @@
                   <div class="gmcs-header__brand-sub">Crop Science</div>
                 </div>
               </div>
+               </br> </br>
               <div class="gmcs-header__date">
                 <span>Date :</span>
                 <span class="gmcs-blank gmcs-blank--sm" data-field="contractDate"></span>
@@ -389,16 +391,17 @@
               </tr>
             </tbody>
           </table>
-
-          <footer class="gmcs-footer" aria-label="GMCS footer">
+          </br> </br> </br> </br> </br> </br> </br> </br>
+           <div class="footer-container"></div>
+          <script src="footer.js"></script>
+          <!-- <footer class="gmcs-footer" aria-label="GMCS footer">
             <div class="gmcs-footer__left">Shop- FF-6, Shivaay, Bakrol–Dhamatvan Road, Bakrol Bujrang, Ta. Daskroi, Dist. Ahmedabad-382430</div>
             <div class="gmcs-footer__right">growmorecropscience@gmail.com</div>
           </footer>
         </div>
-
-        <footer class="page__footer" aria-label="Page 3 footer">
-          <span class="page__number">-- 3 of 3 --</span>
-        </footer>
+        <footer class="page__footer" aria-label="Page 3 footer"> -->
+          <!-- <span class="page__number">-- 3 of 3 --</span> -->
+        <!-- </footer> -->
       </section>
     </main>
 
@@ -414,5 +417,6 @@
         });
       });
     </script>
+    <script src="footer.js"></script> 
   </body>
 </html>
