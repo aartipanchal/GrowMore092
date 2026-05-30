@@ -243,7 +243,9 @@ body {
   .gmcs-header__logo {
     max-width: 34mm;
     max-height: 11mm;
-  }
+    mix-blend-mode: multiply;
+    background: white;
+}
 }
 
 /* ===== GMCS page 2 table UI ===== */
@@ -257,6 +259,8 @@ body {
   justify-content: space-between;
   gap: 10px;
   margin: 0 0 8px;
+  background: white;
+
 }
 
 .gmcs-header__gstin {
@@ -265,24 +269,47 @@ body {
 }
 
 .gmcs-header__right {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .gmcs-header__brand {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  border: none;
+  line-height: 0; /* ADD THIS */
 }
 
 .gmcs-header__logo {
-  max-width: 128px;
-  max-height: 48px;
-  width: auto;
-  height: auto;
-  display: block;
-  flex-shrink: 0;
+  width: 28mm;
+  height: 28mm;
   object-fit: contain;
-  object-position: right center;
+  display: block;
+  border: none;
+  /* vertical-align: bottom; ADD THIS */
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hide broken image alt text/border */
+.gmcs-header__logo:not([src]),
+.gmcs-header__logo[src=""] {
+  visibility: hidden;
+}
+
+.gmcs-header__brand {
+  font-size: 0; /* eliminates ALL inline gaps */
+}
+
+.gmcs-header__brand-name,
+.gmcs-header__brand-sub {
+  font-size: 18px; /* restore font sizes */
+}
+
+.gmcs-header__brand-sub {
+  font-size: 12px;
 }
 
 .gmcs-header__brand-name {
@@ -306,18 +333,36 @@ body {
 
 .gmcs-header__brand-text--visible {
   display: block;
-  text-align: right;
-}
-
-.gmcs-header__date {
-  margin-top: 6px;
+  text-align: center;
+  text-decoration: none;
   font-size: 12px;
   font-weight: 600;
 }
 
+.gmcs-header__date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 4px;
+  border: none;
+}
+
+.gmcs-header__date .gmcs-blank {
+  display: none; /* hide the underline completely */
+}
+
+.gmcs-header__date .gmcs-blank--sm {
+  width: 25mm;
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  height: 1em;
+}
+
 .gmcs-blank {
   display: inline-block;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #000; /* ← THIS is the line you see */
   height: 1em;
   vertical-align: baseline;
 }
@@ -335,7 +380,7 @@ body {
 }
 
 .gmcs-blank--xl {
-  width: 95mm;
+  width: 50mm;
 }
 
 .gmcs-blank--xxl {
@@ -370,7 +415,7 @@ body {
 }
 
 .c-no {
-  width: 16px;
+  width: 22px;
   text-align: center;
   padding: 4px 0;
 }
@@ -494,10 +539,10 @@ body {
 }
 
 .own-right__box {
-  height: 82px;
+  height: 110px;
   border: 1px solid rgba(0, 0, 0, 0.7);
   margin: 0 0 8px auto;
-  width: 60%;
+  width: 80px;
 }
 
 .gmcs-footer {
@@ -548,7 +593,7 @@ body {
 }
 
 .gmcs-line--ms {
-  width: 120mm;
+  width: 50mm;
 }
 
 .gmcs-rule {
@@ -635,4 +680,35 @@ body {
 .witness-row {
   height: 44px;
 }
+
+/* PDF page breaks */
+.page {
+  page-break-before: always;
+  break-before: page;
+}
+
+.page:first-child {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+
+/* Ensure all table cells in these specific rows have consistent styling */
+tbody tr td {
+    font-size: 12px;
+    padding: 4px 6px;
+    vertical-align: top;
+}
+
+/* Specifically target the label columns */
+td.c-label {
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Specifically target the number columns */
+td.c-no {
+    text-align: center;
+}
+
 
