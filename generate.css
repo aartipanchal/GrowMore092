@@ -216,3 +216,15 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+@media print {
+  .page {
+    page-break-before: always;
+    break-before: always;
+  }
+
+  .page:first-child {
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+}
